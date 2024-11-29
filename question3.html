@@ -4,21 +4,22 @@
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h1 class="text-2xl font-bold mb-6 text-center">Please select your sex.</h1>
+        <h2 class="text-lg font-semibold mb-4">Please select your sex.</h2>
         <div class="flex items-center mb-4">
             <input type="radio" id="male" name="sex" class="mr-2" onclick="localStorage.setItem('sex', 'Male')">
             <label for="male" class="mr-4">Male</label>
             <input type="radio" id="female" name="sex" class="mr-2" onclick="localStorage.setItem('sex', 'Female')">
             <label for="female">Female</label>
         </div>
-
+        
         <div class="mb-4">
             <label for="dob" class="block text-lg font-semibold mb-2">When were you born?</label>
             <div class="relative">
-                <input type="date" id="dob" class="w-full border border-gray-300 rounded-lg p-2" onchange="localStorage.setItem('dob', this.value)">
+                <input type="text" id="dob" placeholder="mm/dd/yyyy" class="w-full border border-gray-300 rounded-lg p-2" onchange="localStorage.setItem('dob', this.value)">
+                <i class="fas fa-calendar-alt absolute right-3 top-3 text-gray-400"></i>
             </div>
         </div>
-
+        
         <div class="mb-6">
             <label for="country" class="block text-lg font-semibold mb-2">Where do you live?</label>
             <select id="country" class="w-full border border-gray-300 rounded-lg p-2" onchange="localStorage.setItem('country', this.value)">
@@ -26,12 +27,11 @@
                 <option>USA</option>
                 <option>UK</option>
                 <option>Canada</option>
-                <!-- Add more countries as needed -->
             </select>
         </div>
-
+        
         <p class="text-gray-500 text-sm mb-6">We use this information to calculate an accurate calorie goal for you.</p>
-
+        
         <div class="flex justify-between">
             <a href="question2.html" class="bg-white text-indigo-600 border border-indigo-600 rounded-lg px-6 py-2">BACK</a>
             <a href="question4.html" class="bg-indigo-600 text-white rounded-lg px-6 py-2">NEXT</a>
