@@ -6,6 +6,7 @@
             cursor: pointer;
             border-color: #3b82f6;
         }
+
         .choice.selected {
             border-color: #3b82f6;
             background-color: #e0f2fe;
@@ -21,9 +22,20 @@
     </script>
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+    <!-- Header: Fixed to top-left corner -->
+    <header class="text-gray-600 body-font fixed top-0 left-0 p-5 z-10">
+        <div class="flex items-center">
+            <a href="index.html" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="ml-3 text-xl">CalTrack</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md mt-20"> <!-- Adjusted for space below the fixed header -->
         <h1 class="text-2xl font-semibold mb-2 text-center">What is your baseline activity level?</h1>
-        
         
         <div class="space-y-4">
             <div class="border border-gray-300 rounded-lg p-4 choice" onclick="selectChoice(this)">
@@ -45,10 +57,11 @@
         </div>
         
         <div class="flex justify-between mt-6">
-            <!-- <button class="bg-white text-indigo-500 border border-indigo-500 px-6 py-2 rounded-lg font-semibold">BACK</button> -->
-             <a href="question1.html" class="bg-white text-indigo-600 border border-indigo-600 rounded-lg px-6 py-2">BACK</a>
-            <!-- <button class="bg-indigo-500 text-white px-6 py-2 rounded-lg font-semibold">NEXT</button> -->
-             <a href="question3.html" class="bg-indigo-600 text-white rounded-lg px-6 py-2">NEXT</a>
+            <!-- BACK button -->
+            <a href="question1.html" class="bg-white text-indigo-600 border border-indigo-600 rounded-lg px-6 py-2">BACK</a>
+            
+            <!-- NEXT button -->
+            <a href="question3.html" class="bg-indigo-600 text-white rounded-lg px-6 py-2">NEXT</a>
         </div>
     </div>
 </body>
