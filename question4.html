@@ -3,6 +3,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="absolute top-4 left-4">
+        <!-- CalTrack logo -->
+        <img src="path_to_logo.png" alt="CalTrack" class="h-8">
+    </div>
     <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <div class="mb-6">
             <h2 class="text-xl font-bold mb-2">How tall are you?</h2>
@@ -22,7 +26,7 @@
             <h2 class="text-xl font-bold mb-2">What's your goal weight?</h2>
             <p class="text-gray-600 mb-2">This doesn't affect your daily calorie goal and you can always change it later.</p>
             <div class="mb-2">
-                <input type="number" id="goalWeight" placeholder="Goal weight (kg)" class="border border-gray-300 rounded-lg p-2 w-full" onchange="localStorage.setItem('goalWeight', this.value)">
+                <input type="number" id="goal-weight" placeholder="Goal weight" class="border border-gray-300 rounded-lg p-2 w-full">
             </div>
         </div>
         
