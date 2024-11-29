@@ -4,23 +4,29 @@
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h2 class="text-lg font-semibold mb-4">How tall are you?</h2>
-        <div class="flex space-x-4 mb-2">
-            <input type="number" id="height" placeholder="Height (cm)" class="border border-gray-300 rounded-lg p-2 w-full" onchange="localStorage.setItem('height', this.value)">
+        <div class="mb-6">
+            <h2 class="text-xl font-bold mb-2">How tall are you?</h2>
+            <div class="flex space-x-4 mb-2">
+                <input type="number" id="height" placeholder="Height (cm)" class="border border-gray-300 rounded-lg p-2 w-full" onchange="localStorage.setItem('height', this.value)">
+            </div>
         </div>
-
-        <h2 class="text-lg font-semibold mb-4">How much do you weigh?</h2>
-        <div class="mb-2">
-            <input type="number" id="weight" placeholder="Current weight (kg)" class="border border-gray-300 rounded-lg p-2 w-full" onchange="localStorage.setItem('weight', this.value)">
+        
+        <div class="mb-6">
+            <h2 class="text-xl font-bold mb-2">How much do you weigh?</h2>
+            <div class="mb-2">
+                <input type="number" id="weight" placeholder="Current weight (kg)" class="border border-gray-300 rounded-lg p-2 w-full" onchange="localStorage.setItem('weight', this.value)">
+            </div>
         </div>
-
-        <h2 class="text-lg font-semibold mb-4">What's your goal weight?</h2>
-        <p class="text-gray-600 mb-2">This doesn't affect your daily calorie goal and you can always change it later.</p>
-        <div class="mb-2">
-            <input type="number" id="goalWeight" placeholder="Goal weight (kg)" class="border border-gray-300 rounded-lg p-2 w-full" onchange="localStorage.setItem('goalWeight', this.value)">
+        
+        <div class="mb-6">
+            <h2 class="text-xl font-bold mb-2">What's your goal weight?</h2>
+            <p class="text-gray-600 mb-2">This doesn't affect your daily calorie goal and you can always change it later.</p>
+            <div class="mb-2">
+                <input type="number" id="goalWeight" placeholder="Goal weight (kg)" class="border border-gray-300 rounded-lg p-2 w-full" onchange="localStorage.setItem('goalWeight', this.value)">
+            </div>
         </div>
-
-        <div class="flex space-x-4 mt-6">
+        
+        <div class="flex space-x-4">
             <a href="question3.html" class="bg-white text-indigo-600 border border-indigo-600 rounded-lg px-4 py-2 w-full text-center">BACK</a>
             <a href="caloriegoal.html" class="bg-indigo-600 text-white rounded-lg px-4 py-2 w-full text-center">NEXT</a>
         </div>
