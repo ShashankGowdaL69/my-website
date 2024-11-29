@@ -1,25 +1,45 @@
 <html>
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .choice:hover {
+            cursor: pointer;
+            border-color: #3b82f6;
+        }
+
+        .choice.selected {
+            border-color: #3b82f6;
+            background-color: #e0f2fe;
+        }
+    </style>
+    <script>
+        function selectChoice(element, level) {
+            localStorage.setItem('activityLevel', level); // Save activity level to localStorage
+            document.querySelectorAll('.choice').forEach(choice => {
+                choice.classList.remove('selected');
+            });
+            element.classList.add('selected');
+        }
+    </script>
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h1 class="text-2xl font-bold mb-6 text-center">What is your baseline activity level?</h1>
+        <h1 class="text-2xl font-semibold mb-2 text-center">What is your baseline activity level?</h1>
         
         <div class="space-y-4">
-            <div class="border border-gray-300 rounded-lg p-4 choice" onclick="selectChoice(this)">
+            <div class="border border-gray-300 rounded-lg p-4 choice" onclick="selectChoice(this, 'Not Very Active')">
                 <h2 class="text-gray-800 font-semibold">Not Very Active</h2>
                 <p class="text-gray-500">Spend most of the day sitting</p>
             </div>
-            <div class="border border-gray-300 rounded-lg p-4 choice" onclick="selectChoice(this)">
+            <div class="border border-gray-300 rounded-lg p-4 choice" onclick="selectChoice(this, 'Lightly Active')">
                 <h2 class="text-gray-800 font-semibold">Lightly Active</h2>
                 <p class="text-gray-500">Spend a good part of the day on your feet</p>
             </div>
-            <div class="border border-gray-300 rounded-lg p-4 choice" onclick="selectChoice(this)">
+            <div class="border border-gray-300 rounded-lg p-4 choice" onclick="selectChoice(this, 'Active')">
                 <h2 class="text-gray-800 font-semibold">Active</h2>
                 <p class="text-gray-500">Spend a good part of the day doing some physical activity</p>
             </div>
-            <div class="border border-gray-300 rounded-lg p-4 choice" onclick="selectChoice(this)">
+            <div class="border border-gray-300 rounded-lg p-4 choice" onclick="selectChoice(this, 'Very Active')">
                 <h2 class="text-gray-800 font-semibold">Very Active</h2>
                 <p class="text-gray-500">Spend a good part of the day doing heavy physical activity</p>
             </div>
@@ -30,16 +50,5 @@
             <a href="question3.html" class="bg-indigo-600 text-white rounded-lg px-6 py-2">NEXT</a>
         </div>
     </div>
-
-    <script>
-        function selectChoice(element) {
-            let activityLevel = element.textContent.trim(); // Get the activity level text
-            localStorage.setItem('activityLevel', activityLevel); // Save to localStorage
-            document.querySelectorAll('.choice').forEach(choice => {
-                choice.classList.remove('selected');
-            });
-            element.classList.add('selected');
-        }
-    </script>
 </body>
 </html>
