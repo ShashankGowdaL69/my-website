@@ -3,34 +3,36 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 flex items-center justify-center min-h-screen">
+    <div class="absolute top-4 left-4">
+        <!-- CalTrack logo -->
+        <img src="path_to_logo.png" alt="CalTrack" class="h-8">
+    </div>
     <div class="bg-white p-20 rounded-lg shadow-md text-center">
         <h1 class="text-3xl font-bold text-indigo-600 mb-4">Congratulations!</h1>
         <p class="text-lg text-gray-700 mb-4">Your daily net calorie goal is:</p>
         <p id="calorie-goal" class="text-5xl font-bold text-gray-900 mb-4">Calculating...</p>
         <p class="bg-gray-100 text-indigo-600 font-medium py-2 px-4 rounded">calories</p>
         <br>
-        <button type="submit" class="w-full bg-indigo-500 text-white p-3 rounded-lg" onclick="calculateCalories()">Continue</button>
+        <button type="submit" class="w-full bg-indigo-500 text-white p-3 rounded-lg">Continue</button>
     </div>
 
     <script>
-        // Function to calculate calories based on stored data
         function calculateCalories() {
             const sex = localStorage.getItem('sex');
             const height = parseFloat(localStorage.getItem('height'));
             const weight = parseFloat(localStorage.getItem('weight'));
-            const age = new Date().getFullYear() - new Date(localStorage.getItem('dob')).getFullYear(); // Calculate age from DOB
+            const dob = localStorage.getItem('dob');
             const activityLevel = localStorage.getItem('activityLevel');
-            
-            let bmr;
 
-            // Mifflin-St Jeor Equation
+            const age = new Date().getFullYear() - new Date(dob).getFullYear();
+
+            let bmr;
             if (sex === 'Male') {
                 bmr = 10 * weight + 6.25 * height - 5 * age + 5;
             } else {
                 bmr = 10 * weight + 6.25 * height - 5 * age - 161;
             }
 
-            // Adjust BMR based on activity level
             let tdee;
             switch (activityLevel) {
                 case 'Not Very Active':
@@ -46,13 +48,12 @@
                     tdee = bmr * 1.725;
                     break;
                 default:
-                    tdee = bmr * 1.2; // Default to sedentary
+                    tdee = bmr * 1.2; 
             }
 
-            document.getElementById('calorie-goal').innerText = tdee.toFixed(0); // Display calorie goal
+            document.getElementById('calorie-goal').innerText = tdee.toFixed(0);
         }
 
-        // Call the calculateCalories function as soon as the page loads
         window.onload = calculateCalories;
     </script>
 </body>
